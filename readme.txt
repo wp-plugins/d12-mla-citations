@@ -1,10 +1,10 @@
-== d12 MLA Citations ===
+=== d12 MLA Citations ===
 Contributors: kjodle
 Tags: citations, scholar, MLA
 Donate link: http://kjodle.info/support
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: trunk
+Stable tag: 1.0
 License: GPL v.3
 License URI: http://www.gnu.org/copyleft/gpl.html
 
