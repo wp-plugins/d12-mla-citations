@@ -3,7 +3,7 @@
 Plugin Name: d12 MLA Citations
 Plugin URI: http://www.kjodle.net/wordpress/mla-citations/
 Description: Easily add MLA style citations to your WordPress posts.
-Version: 1.0
+Version: 2.0
 Author: Kenneth John Odle
 Author URI: http://techblog.kjodle.net
 Author Support: http://kjodle.info/support
@@ -27,6 +27,11 @@ Released under the GPL v.3, http://www.gnu.org/copyleft/gpl.html
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+/*
+Icons courtesy of Fat Cow
+http://www.fatcow.com/free-icons
+*/
+
 // Prevent this page from being loaded directly.
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
@@ -34,26 +39,32 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 define('FILTERPRIORITY', 10);
 add_filter('the_content', 'do_shortcode', FILTERPRIORITY);
 
-// Let's add our stylesheets:
-function d12cite_styles() {
-	wp_enqueue_style( 'screenstyle', plugins_url( '/css/d12citescreen.css', __FILE__, '1.0', 'screen' ) );
-	wp_enqueue_style( 'printstyle', plugins_url( '/css/d12citeprint.css', __FILE__, '1.0', 'print' ) );
+// Let's add our front end stylesheets:
+function d12_cite_styles() {
+	wp_enqueue_style( 'mlascreenstyle', plugins_url( '/css/screen.css', __FILE__, '1.0', 'screen' ) );
+	wp_enqueue_style( 'mlaprintstyle', plugins_url( '/css/print.css', __FILE__, '1.0', 'print' ) );
 }
-add_action( 'wp_enqueue_scripts', 'd12cite_styles' );
+add_action( 'wp_enqueue_scripts', 'd12_cite_styles' );
+
+// Let's add our back end stylesheets:
+function d12_admin_styles() {
+	wp_enqueue_style( 'mlaadminstyle', plugins_url( '/css/admin.css', __FILE__, '1.0', 'screen' ) );
+}
+add_action( 'admin_enqueue_scripts', 'd12_admin_styles' );
 
 // Add shortcodes to clear floats
 function clearboth_shortcode() {
-	return '<div class="d12clear"></div>';
-	}
+	return '<div style="clear:both;"></div>';
+}
 add_shortcode ('clear', 'clearboth_shortcode');
 
 function clearleft_shortcode() {
-	return '<div class="d12clearleft"></div>';
+	return '<div style="clear:left;"></div>';
 	}
 add_shortcode ('clearleft', 'clearleft_shortcode');
 
 function clearright_shortcode() {
-	return '<div class="d12clearright"></div>';
+	return '<div style="clear: right;"></div>';
 	}
 add_shortcode ('clearright', 'clearright_shortcode');
 
@@ -69,6 +80,19 @@ return '<div id="d12src">
 <p class="d12mlatitle">Works Cited</p>' . $content . '</div>';
 }
 add_shortcode( 'mlaworks', 'd12mlaworks_cited' );
+
+// Begin MLA style "Works Cited" section //
+function d12mlaworks_cited_start( $atts ) {
+return '<div id="d12src">
+<p class="d12mlatitle">Works Cited</p>';
+}
+add_shortcode( 'mla-start', 'd12mlaworks_cited_start' );
+
+// End MLA style "Works Cited" section //
+function d12mlaworks_cited_end( $atts , $content = null ) {
+return '</div>';
+}
+add_shortcode( 'mla-end', 'd12mlaworks_cited_end' );
 
 // Add "d12mlabook" shortcode for "Works Cited" section //
 function d12mlabook_shortcode( $atts ) {
@@ -108,7 +132,7 @@ function d12mlajournal_shortcode( $atts ) {
 	if ($addt == null) {$mediumend = ".";} else {$mediumend = ". ";}
 return html_entity_decode(
 	'<p class="d12srcp">' . $author . $authorend . 
-	'&ldquo;' . $title . '.&rdquo;' . 
+	'&ldquo;' . $title . '.&rdquo; ' . 
 	'<i>' . $journal . '</i>. ' . 
 	$volume . '.' . 
 	$issue . 
@@ -156,3 +180,22 @@ function d12highlightyellow_handler( $atts, $content=null ) {
 	return '<span class="d12highlightyellow">' . $content . '</span>';
 }
 add_shortcode( 'hly' , 'd12highlightyellow_handler' );
+
+
+/* Register a TinyMCE button */
+add_action( 'init', 'd12citations_buttons' );
+function d12citations_buttons() {
+	if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') )
+	{
+		add_filter( "mce_external_plugins", "d12mla_add_buttons" );
+		add_filter( 'mce_buttons_2', 'd12mla_register_buttons' );
+	}
+}
+function d12mla_add_buttons( $plugin_array ) {
+	$plugin_array['d12mla'] = plugins_url( 'js/d12mla.js', __FILE__ );
+	return $plugin_array;
+}
+function d12mla_register_buttons( $buttons ) {
+	array_push( $buttons, 'd12-mla-button' );
+	return $buttons;
+}
