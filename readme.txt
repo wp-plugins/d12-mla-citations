@@ -56,6 +56,14 @@ No, but they will be added in a future update. They can still be accessed by add
 
 No. All your data is entered into your post as a shortcode, so you can edit your data in the shortcode.
 
+= A question that someone might have =
+
+An answer to that question.
+
+= What about foo bar? =
+
+Answer to foo bar dilemma.
+
 == Screenshots ==
 
 1. The plugin adds this button to your toolbar
