@@ -26,19 +26,19 @@ For complete usage instructions, please visit http://kjodle.net/wordpress/mla-ci
 
 == Frequently Asked Questions ==
 
-= Will this plugin handle multiple authors?=
+= Will this plugin handle multiple authors? =
 
 Yes, just enter it as you want it to appear: `Updike, John, and Henry David Thoreau`
 
-= Do I need to add quotation marks around article titles?
+= Do I need to add quotation marks around article titles? =
 
 No, the plugin will handle it for you.
 
-= Do I need to italicize book titles, journal titles, or magazine titles?
+= Do I need to italicize book titles, journal titles, or magazine titles? =
 
 No, the plugin will automatically italicize the titles of books, magazines, and academic journals.
 
-= What's the difference between adding "Additional information" at the end of a citation and adding a note to a citation?
+= What's the difference between adding "Additional information" at the end of a citation and adding a note to a citation? =
 
 The "Additional information" will be appended to the end of the citation paragraph. A note gets added below it, in a separate paragraph. See the screenshots for an example.
 
@@ -48,11 +48,11 @@ The "Additional information" will be appended to the end of the citation paragra
 
 "Internal punctuation" refers to punctuation within each part of the citation, for example, the comma in the author's name: "Lastname, Firstname".
 
-= The highlighting and clear floats plugins do not show up in the drop-down menu.
+= The highlighting and clear floats plugins do not show up in the drop-down menu. =
 
 No, but they will be added in a future update. They can still be accessed by adding the appropriate shortcode manually.
 
-= I made a mistake in one of my citations. Do I need to delete it and start over again?
+= I made a mistake in one of my citations. Do I need to delete it and start over again? =
 
 No. All your data is entered into your post as a shortcode, so you can edit your data in the shortcode.
 
