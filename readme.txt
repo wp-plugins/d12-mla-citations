@@ -12,9 +12,9 @@ Easily add MLA style citations to your WordPress posts.
 
 == Description ==
 
-**Academic publishing just got easier.** This plugin makes it easy for you to add an MLA-style "Works Cited" section to your WordPress posts and pages. This plugin creates citations consistent with the 7th edition of the *MLA Handbook for Writers of Research Papers*. For more information, please visit the [Purdue OWL](https://owl.english.purdue.edu/owl/section/2/11/).
+**Academic publishing just got easier.** This plugin makes it easy for you to add an MLA-style "Works Cited" section to your WordPress posts and pages. It creates citations consistent with the 7th edition of the *MLA Handbook for Writers of Research Papers*. For more information, please visit the [Purdue OWL](https://owl.english.purdue.edu/owl/section/2/11/).
 
-This plugin also adds a shortcode (hly) for highlighting text in quotations, as well as shortcodes for clearing floats (clear, clearleft, clearright).
+This plugin also has a shortcode (hly) for highlighting text in quotations, as well as shortcodes for clearing floats (clear, clearleft, clearright).
 
 For complete usage instructions, please visit http://kjodle.net/wordpress/mla-citations/
 
