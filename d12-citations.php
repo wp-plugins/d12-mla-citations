@@ -3,7 +3,7 @@
 Plugin Name: d12 MLA Citations
 Plugin URI: http://www.kjodle.net/wordpress/mla-citations/
 Description: Easily add MLA style citations to your WordPress posts.
-Version: 2.0
+Version: 2.1
 Author: Kenneth John Odle
 Author URI: http://techblog.kjodle.net
 Author Support: http://kjodle.info/support
@@ -107,9 +107,29 @@ function d12mlabook_shortcode( $atts ) {
 			'addt' => '',
 		), $atts )
 	);
+	$etitle = substr($title,-1);
+	$titleend = ".";
+	switch($etitle) {
+		case "!":
+		$titleend = "";
+		break;
+		case "?":
+		$titleend = "";
+		break;
+	}
 	if ($author == null) {$authorend = "";} else {$authorend = ". ";}
 	if ($addt == null) {$mediumend = ".";} else {$mediumend = ". ";}
-return html_entity_decode('<p class="d12srcp">' . $author . $authorend . '<i>' . $title . '</i>. ' . $city . ': ' . $publisher . ', ' . $year . '. ' . $medium . $mediumend . $addt . '</p>');
+return html_entity_decode(
+	'<p class="d12srcp">' . 
+	$author . $authorend . 
+	'<i>' . $title . $titleend . '</i> ' . 
+	$city . ': ' . 
+	$publisher . ', ' . 
+	$year . '. ' . 
+	$medium . 
+	$mediumend . 
+	$addt . 
+	'</p>');
 }
 add_shortcode( 'mlabook', 'd12mlabook_shortcode' );
 
@@ -128,11 +148,21 @@ function d12mlajournal_shortcode( $atts ) {
 			'addt' => '',
 		), $atts )
 	);
+	$etitle = substr($title,-1);
+	$titleend = ".";
+	switch($etitle) {
+		case "!":
+		$titleend = "";
+		break;
+		case "?":
+		$titleend = "";
+		break;
+	}
 	if ($author == null) {$authorend = "";} else {$authorend = ". ";}
 	if ($addt == null) {$mediumend = ".";} else {$mediumend = ". ";}
 return html_entity_decode(
 	'<p class="d12srcp">' . $author . $authorend . 
-	'&ldquo;' . $title . '.&rdquo; ' . 
+	'&ldquo;' . $title . $titleend . '&rdquo; ' . 
 	'<i>' . $journal . '</i>. ' . 
 	$volume . '.' . 
 	$issue . 
@@ -156,11 +186,21 @@ function d12mlamagazine_shortcode( $atts ) {
 			'addt' => '',
 		), $atts )
 	);
+	$etitle = substr($title,-1);
+	$titleend = ".";
+	switch($etitle) {
+		case "!":
+		$titleend = "";
+		break;
+		case "?":
+		$titleend = "";
+		break;
+	}
 	if ($author == null) {$authorend = "";} else {$authorend = ". ";}
 	if ($addt == null) {$mediumend = ".";} else {$mediumend = ". ";}
 return html_entity_decode(
 	'<p class="d12srcp">' . $author . $authorend . 
-	'&ldquo;' . $title . '.&rdquo; ' . 
+	'&ldquo;' . $title . $titleend . '&rdquo; ' . 
 	'<i>' . $magazine . '</i>. ' . 
 	$date . ': ' . 
 	$pages . '. ' . 

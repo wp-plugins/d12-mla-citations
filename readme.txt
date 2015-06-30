@@ -4,7 +4,7 @@ Tags: citations, scholar, MLA
 Donate link: http://kjodle.info/support
 Requires at least: 2.5
 Tested up to: 4.2.2
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPL v.3
 License URI: http://www.gnu.org/copyleft/gpl.html
 
@@ -12,9 +12,9 @@ Easily add MLA style citations to your WordPress posts.
 
 == Description ==
 
-**Academic publishing just got easier.** This plugin makes it easy for you to add an MLA-style "Works Cited" section to your WordPress posts and pages. It creates citations consistent with the 7th edition of the *MLA Handbook for Writers of Research Papers*. For more information, please visit the [Purdue OWL](https://owl.english.purdue.edu/owl/section/2/11/).
+**Academic publishing just got easier.** This plugin makes it easy for you to add an MLA-style "Works Cited" section to your WordPress posts and pages. This plugin creates citations consistent with the 7th edition of the *MLA Handbook for Writers of Research Papers*. For more information, please visit the [Purdue OWL](https://owl.english.purdue.edu/owl/section/2/11/).
 
-This plugin also has a shortcode (hly) for highlighting text in quotations, as well as shortcodes for clearing floats (clear, clearleft, clearright).
+This plugin also adds a shortcode (hly) for highlighting text in quotations, as well as shortcodes for clearing floats (clear, clearleft, clearright).
 
 For complete usage instructions, please visit http://kjodle.net/wordpress/mla-citations/
 
@@ -26,19 +26,19 @@ For complete usage instructions, please visit http://kjodle.net/wordpress/mla-ci
 
 == Frequently Asked Questions ==
 
-= Will this plugin handle multiple authors? =
+= Will this plugin handle multiple authors?=
 
 Yes, just enter it as you want it to appear: `Updike, John, and Henry David Thoreau`
 
-= Do I need to add quotation marks around article titles? =
+= Do I need to add quotation marks around article titles?
 
 No, the plugin will handle it for you.
 
-= Do I need to italicize book titles, journal titles, or magazine titles? =
+= Do I need to italicize book titles, journal titles, or magazine titles?
 
 No, the plugin will automatically italicize the titles of books, magazines, and academic journals.
 
-= What's the difference between adding "Additional information" at the end of a citation and adding a note to a citation? =
+= What's the difference between adding "Additional information" at the end of a citation and adding a note to a citation?
 
 The "Additional information" will be appended to the end of the citation paragraph. A note gets added below it, in a separate paragraph. See the screenshots for an example.
 
@@ -48,11 +48,11 @@ The "Additional information" will be appended to the end of the citation paragra
 
 "Internal punctuation" refers to punctuation within each part of the citation, for example, the comma in the author's name: "Lastname, Firstname".
 
-= The highlighting and clear floats plugins do not show up in the drop-down menu. =
+= The highlighting and clear floats plugins do not show up in the drop-down menu.
 
 No, but they will be added in a future update. They can still be accessed by adding the appropriate shortcode manually.
 
-= I made a mistake in one of my citations. Do I need to delete it and start over again? =
+= I made a mistake in one of my citations. Do I need to delete it and start over again?
 
 No. All your data is entered into your post as a shortcode, so you can edit your data in the shortcode.
 
@@ -70,6 +70,12 @@ No. All your data is entered into your post as a shortcode, so you can edit your
 
 == Changelog ==
 
+= 2.1 =
+* Added the option to highlight text
+* Added the option to make text footnote size
+* Added buttons for clearing floats
+* Fixed a bug where titles of books, journal articles, or magazine articles that ended with an exclamation point or question mark still had a period after them.
+
 = 2.0 =
 * The plugin's functions can now be accessed via a toolbar button
 * Citation information can be easily entered via a popup window
@@ -78,6 +84,9 @@ No. All your data is entered into your post as a shortcode, so you can edit your
 * Initial release.
 
 == Upgrade Notice ==
+
+= 2.1 =
+You now have options to highlight text (in yellow, of course), make text smaller (as in a footnote), and to clear floats around inserted images. Also, 1 bugfix (see Changelog).
 
 = 2.0 =
 The plugin's features can now be accessed easily from a toolbar button. Citation information is easily entered in a popup window.
