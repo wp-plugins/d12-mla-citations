@@ -18,6 +18,9 @@ This plugin also adds a shortcode (hly) for highlighting text in quotations, as 
 
 For complete usage instructions, please visit http://kjodle.net/wordpress/mla-citations/
 
+Want to check it out in different themes? Check out [my multi-theme demo page](http://waybeta.net/2015/07/d12-mla-citations-plugin/).
+
+
 == Installation ==
 
 1. Upload the \'d12-mla-citations\' folder to \'/wp-content/plugins/\'
